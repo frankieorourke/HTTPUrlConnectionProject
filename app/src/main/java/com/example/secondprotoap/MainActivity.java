@@ -47,24 +47,23 @@ public class MainActivity extends AppCompatActivity {
             con.setRequestMethod("GET");
 
 
-            //InputStream is = con.getErrorStream();
-            InputStream is = con.getInputStream();
-            /*
+            //InputStream is = con.getErrorStream();        //this line throws exception
+            InputStream is = con.getInputStream();          // this line throws exception
+
             BufferedReader reader = new BufferedReader(new InputStreamReader(is));
             StringBuilder sb = new StringBuilder();
             String line;
             while ((line = reader.readLine()) != null) {
                 sb.append(line);
-            }*/
-            return " klkl";
-
+            }
+            return sb.toString();
         }
         catch(Exception e){
             throw new java.io.IOException("exception thrown");
             }
             finally {
-            if (con != null) {
-                con.disconnect();
+                if (con != null) {
+                    con.disconnect();
             }
         }
     }
